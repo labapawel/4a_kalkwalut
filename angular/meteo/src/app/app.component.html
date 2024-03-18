@@ -1,0 +1,8 @@
+<header>
+    <input type="text" [(ngModel)]="miasto">
+</header>
+<main>
+  <app-stacja *ngFor="let stacja of daneZImgw()" [dane]="stacja"></app-stacja>
+</main>
+
+<router-outlet />
