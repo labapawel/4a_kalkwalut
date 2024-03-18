@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-interface nbpRates{
+export interface nbpRates{
   currency: string;
   code: string;
   mid: number
 }
-interface nbp {
+export interface nbp {
   tabela:string;
   no: string;
   effectiveDate: Date
