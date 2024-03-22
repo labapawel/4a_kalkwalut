@@ -1,6 +1,12 @@
 <main>
-    <input type="number" name="" id="" ([ngModel])="ile">
-
-    <select  name="" id="" ([ngModel])="val1">
+    <input type="number" name="" id="" ([ngModel])="ile" (change)="licz()">
+    
+    <select  name="" id="" (ngModelChange)="ch(this)" [(ngModel)]="val1"  (change)="licz()">
+        <option *ngFor="let kurs of kursy"  [ngValue]="myValue(kurs)">{{myTitle(kurs)}}</option>
     </select>
+    <select  name="" id="" (ngModelChange)="ch(this)" [(ngModel)]="val2"  (change)="licz()">
+        <option *ngFor="let kurs of kursy"  [ngValue]="myValue(kurs)">{{myTitle(kurs)}}</option>
+    </select>
+
+    <div>{{wynik}}</div>
 </main>

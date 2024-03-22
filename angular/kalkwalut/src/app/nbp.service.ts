@@ -20,12 +20,14 @@ export interface nbp {
 
 export class NbpService {
   public dane?:nbp;
-  _obs = new BehaviorSubject<any>(null);
+  _obs = new BehaviorSubject<any>({rates:[]});
   constructor() {
     fetch('http://api.nbp.pl/api/exchangerates/tables/a/?format=json')
       .then(e=>e.json())
       .then(e=>{ 
-        this._obs.next(e)
+        //console.log(e[0]);
+        e[0].rates.push({currency:"Polski złoty",code:"PLN", mid:1} );
+        this._obs.next(e[0])
       })
    }
 
